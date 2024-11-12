@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nsploit.</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="nspl.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="nspl.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="nspl.webp">
+    <meta name="theme-color" content="#D500F9">
+
+    <meta property="og:title" content="NSploit - The Ultimate Executor">
+    <meta property="og:description" content="Unleash the power of N-Sploit with the most advanced executor available.">
+    <meta property="og:image" content="nspl.webp">
+    <meta property="og:url" content="https://xenodll.vercel.app/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NSploit - The Ultimate Executor">
+    <meta name="twitter:description" content="Unleash the power of N-Sploit with the most advanced executor available.">
+    <meta name="twitter:image" content="nspl.webp">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary: #D500F9;
+            --background: #0A0A0A;
+            --text: #FFFFFF;
+            --secondary: #BB86FC;
+            --glow: #8E24AA;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        .navbar {
+            background: rgb(20, 20, 20);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .main-content {
+            margin-top: 120px;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section {
+            text-align: left;
+            margin-bottom: 4rem;
+        }
+
+        .hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--glow);
+    position: relative;
+}
+
+.hero-title::after {
+    /* content: ''; */
+    position: absolute;
+    bottom: -10px; /* Adjust based on your preference */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Height of the line */
+    background: linear-gradient(45deg, #00FF00, #00C853); /* Green color */
+    border-radius: 50% 50% 0 0; /* Create the curve effect */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8); /* Glowing green effect */
+}
+
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #BBBBBB;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), #9C27B0);
+            color: var(--text);
+            box-shadow: 0 6px 15px rgba(255, 0, 65, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #333, #555);
+            color: var(--text);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(255, 0, 65, 0.6);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #9C27B0, var(--primary));
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #555, #777);
+        }
+
+        .features-section {
+            margin-top: 2rem;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid transparent;
+            text-align: center;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(255, 0, 65, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .image-section {
+            margin-top: 4rem;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-image:hover {
+            transform: scale(1.05);
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+        }
+
+        .logo-container {
+            margin-right: auto;
+        }
+
+        .logo {
+            height: 50px; 
+            width: auto; 
+        }
+
+        .brand-title {
+            color: var(--text);
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            font-weight: bold;
+        }
+
+        ::selection {
+            color: #000;
+            background: #bb00ff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="nspl.webp" alt="NSploit Logo" class="logo">
+        </div>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="https://discord.gg/FY2UmXhgje" class="nav-link">Discord</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section animate__animated animate__fadeIn">
+            <h1 class="hero-title animate__animated animate__fadeInDown">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bb00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wand-sparkles"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg>
+                nsploit.</h1>
+            <p class="hero-subtitle animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4b4b4b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-share"><path d="M21 12v3a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h7"/><path d="M16 3h5v5"/><path d="m16 8 5-5"/></svg>
+                the exploit that uses xeno dll
+                <!--
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+            -->
+            </p>
+            <div class="buttons-container">
+                <a href="https://discord.gg/FY2UmXhgje" class="btn btn-primary animate__animated animate__fadeIn" style="animation-delay: 0.3s">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+                    Download Now
+                </a>
+                <a href="https://discord.gg/FY2UmXhgje" class="btn btn-secondary animate__animated animate__fadeIn" style="animation-delay: 0.4s">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bb00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rss"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                    Join Discord
+                </a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+            <h2 class="features-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A020F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+                features.</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+                        fast.</h3>
+                    <p>we don't dump offsets ourselves, rizve does it for us. so, we update fast.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-app-window"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 4v4"/><path d="M2 8h20"/><path d="M6 4v4"/></svg>
+                        user-friendly ui</h3>
+                    <p>simple, intuitive design for dummies to use.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        secure & safe</h3>
+                    <p>protected against vulnerabilities. open-sourced on github - https://github.com/nsploit/nsploit</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Section -->
+        <section class="image-section animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+            <img src="nspl.webp" alt="NSploit Demo" class="feature-image">
+        </section>
+    </main>
+</body>
+</html>
