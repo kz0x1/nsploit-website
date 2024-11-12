@@ -1,4 +1,4 @@
-# N-Sploit website
+# N-Sploit website - please star! ⭐
 
 ## Welcome to the official page for the source code of the n-sploit exploit website!
 
